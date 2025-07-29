@@ -61,7 +61,8 @@ const ServiceDetailsPage = ({ params }) => {
 
     const id = params?.id;
     const singleData = data.find((d) => d._id == id);
-    return (
+    if (singleData){
+        return (
         <div className="max-w-4xl mx-auto p-6">
             <h1 className="text-3xl font-bold text-center text-green-600 mb-6">
                 {singleData.serviceName}
@@ -82,6 +83,13 @@ const ServiceDetailsPage = ({ params }) => {
         </div>
 
     );
+    }
+    else {
+        <>
+       <p>Not Found 404</p>
+        </>
+    }
+    
 };
 
 export default ServiceDetailsPage;
