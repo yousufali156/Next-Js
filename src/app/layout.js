@@ -19,17 +19,39 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-full flex flex-col min-h-screen`}
       >
         <NavBar />
 
-        <main className="h-screen ">
+        <main className="flex-grow">
           {children}
         </main>
-        <footer className="text-center">
-          Awesome NextJs Learn
+        <footer className="bg-gray-900 text-white py-8">
+          <div className="container mx-auto text-center">
+            <h3 className="text-xl font-bold mb-4">Awesome NextJs Learn</h3>
+            <p className="mb-6 max-w-lg mx-auto text-gray-300">
+              Your short tagline or mission statement can go here.
+            </p>
+
+            {/* Social Media Icons (replace with actual icons/links) */}
+            <div className="flex justify-center space-x-6 mb-8">
+              <a href="#" aria-label="Facebook" className="text-gray-400 hover:text-white transition-colors duration-300">
+                {/* Replace with your Facebook SVG/Icon */}
+                <svg fill="currentColor" viewBox="0 0 24 24" className="h-6 w-6"><path d="M12 2C6.477 2 2 6.477 2 12c0 5.01 3.657 9.123 8.438 9.879V14.89h-2.54V12h2.54v-1.74c0-2.527 1.493-3.931 3.791-3.931 1.082 0 2.15.192 2.15.192V8.495h-1.229c-1.248 0-1.64.779-1.64 1.574V12h2.773l-.443 2.89h-2.33V21.879C18.343 21.123 22 17.01 22 12c0-5.523-4.477-10-10-10z"></path></svg>
+              </a>
+              <a href="#" aria-label="Twitter" className="text-gray-400 hover:text-white transition-colors duration-300">
+                {/* Replace with your Twitter SVG/Icon */}
+                <svg fill="currentColor" viewBox="0 0 24 24" className="h-6 w-6"><path d="M22.46 6c-.85.38-1.76.64-2.7.75.97-.58 1.7-1.5 2.04-2.61-.9.53-1.9.92-2.95 1.13C18.2 4.13 16.9 3.5 15.5 3.5 12.04 3.5 9.27 6.26 9.27 9.73c0 .76.08 1.5.24 2.2-.06.01-.13.01-.19.01-2.94 0-5.55-1.55-7.3-3.79C1.98 9.77 1.83 10.33 1.83 11c0 2.5 1.27 4.7 3.2 5.96C4.1 16.7 3.36 16.48 2.7 16.1v.03c0 2.85 2.03 5.22 4.73 5.76-.47.13-.97.2-1.48.2-.36 0-.71-.03-1.06-.1C5.6 20.3 7.8 21.98 10.3 22c-2.02 1.58-4.57 2.48-7.23 2.48-.47 0-.9-.03-1.33-.08 2.62 1.67 5.7 2.63 8.98 2.63 9.73 0 15-7.72 15-14.47 0-.22-.01-.44-.01-.66.69-.5 1.28-1.12 1.75-1.84z"></path></svg>
+              </a>
+              {/* Add more social media icons as needed */}
+            </div>
+
+            <p className="text-sm text-gray-500">
+              &copy; {new Date().getFullYear()} Awesome NextJs Learn. All rights reserved.
+            </p>
+          </div>
         </footer>
       </body>
     </html>
