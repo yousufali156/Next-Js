@@ -6,7 +6,7 @@ import { motion, AnimatePresence, useAnimation, useInView } from 'framer-motion'
 import Image from 'next/image';
 import {
     FaRocket, FaUsers, FaHistory, FaBriefcase, FaAward, FaHandshake,
-    FaCodeBranch, FaCamera, FaMapMarkerAlt, FaTimes
+    FaCodeBranch, FaCamera, FaMapMarkerAlt, FaTimes, FaLightbulb, FaCogs
 } from 'react-icons/fa';
 
 // --- TestimonialCarousel Component ---
@@ -221,6 +221,33 @@ const aboutData = {
                 "**Visit:** Feel free to schedule a visit by contacting us via email or phone."
             ]
         },
+        {
+            id: 'values',
+            title: "Our Values",
+            desc: "Integrity, innovation, and user-centric design are the core values that guide our work. We believe in being transparent with our clients, constantly exploring new technologies, and putting the end-user first in every project. These values are the foundation of our success.",
+            icon: FaLightbulb,
+            details: [
+                "**Integrity:** We operate with honesty and transparency in all our dealings.",
+                "**Innovation:** We are always exploring new technologies and creative solutions.",
+                "**User-Centric Design:** We put the user's needs at the forefront of our design process.",
+                "**Quality:** We are committed to delivering high-quality, reliable, and bug-free products.",
+                "**Collaboration:** We believe in working together, both internally and with our clients.",
+            ]
+        },
+        {
+            id: 'process',
+            title: "Our Process",
+            desc: "Our development process is agile and highly collaborative. We start with a discovery phase to understand your needs, move to design and prototyping, then development and rigorous testing, and finally, deployment and ongoing support. This structured approach ensures a smooth and successful project delivery.",
+            icon: FaCogs,
+            details: [
+                "**1. Discovery:** We start with a deep dive into your project requirements and business goals.",
+                "**2. Design & Prototyping:** We create wireframes and interactive prototypes to visualize the product.",
+                "**3. Development:** Our developers build the application using a modern tech stack and best practices.",
+                "**4. Testing & QA:** We perform thorough testing to ensure a high-quality and bug-free product.",
+                "**5. Deployment:** We deploy your application to a reliable hosting platform like Vercel or AWS.",
+                "**6. Support & Maintenance:** We offer ongoing support and maintenance to keep your application running smoothly.",
+            ]
+        },
     ],
     testimonials, // Using the testimonials data from the carousel
     contact: {
@@ -233,7 +260,6 @@ const aboutData = {
 // --- Main Page Component ---
 const AboutPage = () => {
     const router = useRouter();
-<<<<<<< HEAD
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [dark, setDark] = useState(false);
@@ -257,9 +283,6 @@ const AboutPage = () => {
             document.documentElement.classList.remove("dark");
         }
     };
-=======
-    const isLoggedIn = false;
->>>>>>> 51c3a74cb3bdae07509582dc261130e68db3cc2c
 
     const handleNavigation = () => {
         if (isLoggedIn) {
@@ -269,7 +292,6 @@ const AboutPage = () => {
         }
     };
 
-<<<<<<< HEAD
     const openModal = (section) => {
         setModalContent(section);
     };
@@ -471,65 +493,6 @@ const AboutPage = () => {
                         </button>
                     </motion.div>
                 </div>
-=======
-    return (
-        <div className="p-6 space-y-4">
-            <p className='font-bold text-3xl text-green-500'>This is About Page</p>
-            
-            <p>
-                <Link href="/about/address" className="text-blue-600 underline">
-                    Go to Address Page
-                </Link>
-            </p>
-
-            <button 
-                type='button' 
-                onClick={handleNavigation}
-                className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
-            >
-                Address Page
-            </button>
-
-            {/* Section 1: About Our Mission */}
-            <section>
-                <h2 className="text-2xl font-semibold">Our Mission</h2>
-                <p className="text-gray-700">
-                    Our mission is to build scalable and user-friendly web applications that solve real-world problems.
-                </p>
-            </section>
-
-            {/* Section 2: Our Team */}
-            <section>
-                <h2 className="text-2xl font-semibold">Our Team</h2>
-                <p className="text-gray-700">
-                    We are a team of passionate developers, designers, and problem solvers who love creating digital experiences.
-                </p>
-            </section>
-
-            {/* Section 3: Our History */}
-            <section>
-                <h2 className="text-2xl font-semibold">Our History</h2>
-                <p className="text-gray-700">
-                    Founded in 2020, we started with a small group of tech enthusiasts and now serve thousands of users worldwide.
-                </p>
-            </section>
-
-            {/* Section 4: Our Services */}
-            <section>
-                <h2 className="text-2xl font-semibold">What We Do</h2>
-                <p className="text-gray-700">
-                    We provide web development, app development, UI/UX design, and API integration services.
-                </p>
-            </section>
-
-            {/* Section 5: Contact Info */}
-            <section>
-                <h2 className="text-2xl font-semibold">Contact Us</h2>
-                <p className="text-gray-700">
-                    Email: support@example.com <br />
-                    Phone: +880 1234 567890
-                </p>
->>>>>>> 51c3a74cb3bdae07509582dc261130e68db3cc2c
             </section>
         </div>
     );
