@@ -32,7 +32,7 @@ const NavBar = () => {
                         </li>
                     </Link>
                     <Link href="/meals">
-                        <li className={`text-lg font-medium hover:text-blue-400 transition-colors duration-200 ${pathname.startsWith('/posts') ? 'text-blue-500' : ''}`}>
+                        <li className={`text-lg font-medium hover:text-blue-400 transition-colors duration-200 ${pathname.startsWith('/meals') ? 'text-blue-500' : ''}`}>
                             Meals
                         </li>
                     </Link>

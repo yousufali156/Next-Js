@@ -6,6 +6,10 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
+        protocol: 'https',
+        hostname: 'www.themealdb.com',
+      },
+      {
         hostname: 'randomuser.me',
       },
       {
@@ -23,6 +27,7 @@ const nextConfig = {
       {
         hostname: 'i.pravatar.cc',
       },
+
     ],
   },
 };
