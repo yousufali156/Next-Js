@@ -1,24 +1,30 @@
-import { Moon, Sun } from "lucide-react";
+"use client";
 import { useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
 
 const ThemeToggle = () => {
+  const [isMounted, setIsMounted] = useState(false);
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const storedTheme = localStorage.getItem("theme");
-      if (storedTheme === "dark") {
-        document.documentElement.classList.add("dark");
-        setIsDark(true);
-      } else {
-        document.documentElement.classList.remove("dark");
-        setIsDark(false);
-      }
+    setIsMounted(true);
+
+    const storedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    const dark = storedTheme === "dark" || (!storedTheme && prefersDark);
+    setIsDark(dark);
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
   const toggleTheme = () => {
     const html = document.documentElement;
+
     if (html.classList.contains("dark")) {
       html.classList.remove("dark");
       localStorage.setItem("theme", "light");
@@ -29,6 +35,8 @@ const ThemeToggle = () => {
       setIsDark(true);
     }
   };
+
+  if (!isMounted) return null;
 
   return (
     <button onClick={toggleTheme} className="text-white">

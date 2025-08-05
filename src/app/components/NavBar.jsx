@@ -1,14 +1,13 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Moon, Sun, Menu, X } from "lucide-react";
-import ThemeToggle from "../services/themeToggle";
+import { Menu, X } from "lucide-react";
+import ThemeToggle from "../themeToggle"; // adjust path as needed
 
 const NavBar = () => {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
 
   // Hide navbar on dashboard routes
   if (pathname.includes("dashboard")) return null;
@@ -25,38 +24,14 @@ const NavBar = () => {
     { href: "/register", label: "Register" },
   ];
 
-  // Dark mode toggle logic
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const stored = localStorage.getItem("theme");
-      if (stored === "dark") {
-        document.documentElement.classList.add("dark");
-        setDarkMode(true);
-      }
-    }
-  }, []);
-
-  const toggleDarkMode = () => {
-    const html = document.documentElement;
-    if (html.classList.contains("dark")) {
-      html.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setDarkMode(false);
-    } else {
-      html.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setDarkMode(true);
-    }
-  };
-
   return (
     <header className="bg-gray-800 dark:bg-gray-900 text-white p-4 shadow-md">
       <nav className="container mx-auto flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-bold">MyApp</div>
+        <div className="text-2xl font-bold">Next.Js App</div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6">
+        <ul className="hidden md:flex space-x-6 items-center">
           {navLinks.map(({ href, label }) => {
             const isActive =
               href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -71,21 +46,19 @@ const NavBar = () => {
                   {label}
                 </Link>
               </li>
-
-              
             );
           })}
-                          <ThemeToggle></ThemeToggle>
-
+          {/* Desktop dark mode toggle */}
+          <li>
+            <ThemeToggle />
+          </li>
         </ul>
 
-        {/* Right Side: Theme Toggle & Mobile Menu Button */}
-        <div className="flex items-center space-x-4">
-          <button onClick={toggleDarkMode} className="text-white">
-            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
+        {/* Mobile: dark mode toggle and menu button */}
+        <div className="flex md:hidden items-center space-x-4">
+          <ThemeToggle />
           <button
-            className="md:hidden text-white"
+            className="text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
