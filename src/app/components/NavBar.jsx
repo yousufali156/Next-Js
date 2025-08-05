@@ -1,71 +1,124 @@
 "use client";
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Moon, Sun, Menu, X } from "lucide-react";
+import ThemeToggle from "../services/themeToggle";
 
 const NavBar = () => {
-    const pathname = usePathname();
-    console.log(pathname, pathname.includes("dashboard"));
+  const pathname = usePathname();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
-    // Hide Navbar on dashboard paths
-    if (pathname.includes("dashboard")) {
-        return null; 
+  // Hide navbar on dashboard routes
+  if (pathname.includes("dashboard")) return null;
+
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/services", label: "Services" },
+    { href: "/posts", label: "Posts" },
+    { href: "/meals", label: "Meals" },
+    { href: "/about", label: "About" },
+    { href: "/blog", label: "Blog" },
+    { href: "/contact", label: "Contact" },
+    { href: "/login", label: "Login" },
+    { href: "/register", label: "Register" },
+  ];
+
+  // Dark mode toggle logic
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("theme");
+      if (stored === "dark") {
+        document.documentElement.classList.add("dark");
+        setDarkMode(true);
+      }
     }
+  }, []);
 
-    return (
-        <div className="bg-gray-800 text-white p-4 shadow-md">
-            <nav className="container mx-auto">
-                <ul className="flex justify-center space-x-8"> {/* Centered with space */}
-                    <Link href="/">
-                        <li className={`text-lg font-medium hover:text-blue-400 transition-colors duration-200 ${pathname === '/' ? 'text-blue-500' : ''}`}>
-                            Home
-                        </li>
-                    </Link>
-                    <Link href="/services">
-                        <li className={`text-lg font-medium hover:text-blue-400 transition-colors duration-200 ${pathname.startsWith('/services') ? 'text-blue-500' : ''}`}>
-                            Services
-                        </li>
-                    </Link>
-                    <Link href="/posts">
-                        <li className={`text-lg font-medium hover:text-blue-400 transition-colors duration-200 ${pathname.startsWith('/posts') ? 'text-blue-500' : ''}`}>
-                            Posts
-                        </li>
-                    </Link>
-                    <Link href="/meals">
-                        <li className={`text-lg font-medium hover:text-blue-400 transition-colors duration-200 ${pathname.startsWith('/meals') ? 'text-blue-500' : ''}`}>
-                            Meals
-                        </li>
-                    </Link>
-                    <Link href="/about">
-                        <li className={`text-lg font-medium hover:text-blue-400 transition-colors duration-200 ${pathname === '/about' ? 'text-blue-500' : ''}`}>
-                            About
-                        </li>
-                    </Link>
-                    <Link href="/blog">
-                        {/* Corrected "Bolog" to "Blog" */}
-                        <li className={`text-lg font-medium hover:text-blue-400 transition-colors duration-200 ${pathname.startsWith('/blog') ? 'text-blue-500' : ''}`}>
-                            Blog
-                        </li>
-                    </Link>
-                    <Link href="/contact">
-                        <li className={`text-lg font-medium hover:text-blue-400 transition-colors duration-200 ${pathname === '/contact' ? 'text-blue-500' : ''}`}>
-                            Contact
-                        </li>
-                    </Link>
-                    <Link href="/login">
-                        <li className={`text-lg font-medium hover:text-blue-400 transition-colors duration-200 ${pathname === '/login' ? 'text-blue-500' : ''}`}>
-                            Login
-                        </li>
-                    </Link>
-                    <Link href="/register">
-                        <li className={`text-lg font-medium hover:text-blue-400 transition-colors duration-200 ${pathname === '/register' ? 'text-blue-500' : ''}`}>
-                            Register
-                        </li>
-                    </Link>
-                </ul>
-            </nav>
+  const toggleDarkMode = () => {
+    const html = document.documentElement;
+    if (html.classList.contains("dark")) {
+      html.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setDarkMode(false);
+    } else {
+      html.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setDarkMode(true);
+    }
+  };
+
+  return (
+    <header className="bg-gray-800 dark:bg-gray-900 text-white p-4 shadow-md">
+      <nav className="container mx-auto flex items-center justify-between">
+        {/* Logo */}
+        <div className="text-2xl font-bold">MyApp</div>
+
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex space-x-6">
+          {navLinks.map(({ href, label }) => {
+            const isActive =
+              href === "/" ? pathname === "/" : pathname.startsWith(href);
+            return (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className={`text-lg font-medium hover:text-blue-400 transition-colors duration-200 ${
+                    isActive ? "text-blue-500" : ""
+                  }`}
+                >
+                  {label}
+                </Link>
+              </li>
+
+              
+            );
+          })}
+                          <ThemeToggle></ThemeToggle>
+
+        </ul>
+
+        {/* Right Side: Theme Toggle & Mobile Menu Button */}
+        <div className="flex items-center space-x-4">
+          <button onClick={toggleDarkMode} className="text-white">
+            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          <button
+            className="md:hidden text-white"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
-    );
+      </nav>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden mt-2 px-4">
+          <ul className="flex flex-col space-y-2">
+            {navLinks.map(({ href, label }) => {
+              const isActive =
+                href === "/" ? pathname === "/" : pathname.startsWith(href);
+              return (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className={`block py-2 px-3 rounded hover:bg-blue-500 hover:text-white transition-colors duration-200 ${
+                      isActive ? "text-blue-400" : ""
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
+    </header>
+  );
 };
 
 export default NavBar;

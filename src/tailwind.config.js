@@ -2,6 +2,7 @@
 module.exports = {
   darkMode: 'class', // Toggle dark mode with class (e.g., <html className="dark">)
 
+
   content: [
     './app/**/*.{js,jsx,ts,tsx}',       // App Router (Next.js 13+)
     './pages/**/*.{js,jsx,ts,tsx}',     // Pages Router (optional fallback)
