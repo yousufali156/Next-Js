@@ -408,85 +408,85 @@ export default function BlogPage() {
       likes: 36,
     },
     {
-  id: 51,
-  englishTitle: 'React State Management: Choosing the Right Tool',
-  bengaliTitle: 'React স্টেট ম্যানেজমেন্ট: সঠিক টুলটি বেছে নেওয়া',
-  description: 'useState, useReducer, Context API, Redux—কোন পরিস্থিতিতে কোনটি ব্যবহার করবেন, তার বিশ্লেষণ।',
-  content: 'This post explains the differences between useState, useReducer, Context API, and Redux. It guides developers on when to use which for scalable and efficient state management.',
-  likes: 18,
-},
-{
-  id: 52,
-  englishTitle: 'Reusable Custom Hooks in React: Clean & Powerful',
-  bengaliTitle: 'React-এ Reusable কাস্টম হুক: পরিচ্ছন্ন ও শক্তিশালী কোডিং',
-  description: 'React এ কিভাবে নিজস্ব কাস্টম হুক তৈরি করে রিইউজেবল ও ক্লিন কম্পোনেন্ট গঠন করবেন।',
-  content: 'Learn how to create and reuse custom hooks in React to encapsulate logic and keep components clean and focused. This approach encourages separation of concerns and code reusability.',
-  likes: 25,
-},
-{
-  id: 53,
-  englishTitle: 'React Router v6: Nested Routes & Dynamic Loading',
-  bengaliTitle: 'React Router v6: Nested রুট ও ডায়নামিক লোডিং Explained',
-  description: 'React Router v6-এ কীভাবে Nested Routes ও Lazy Load Routes তৈরি করবেন তা বিস্তারিতভাবে আলোচনা।',
-  content: 'Explore advanced routing techniques using React Router v6, including nested routes, dynamic routes, and lazy loading to optimize performance and structure.',
-  likes: 19,
-},
-{
-  id: 54,
-  englishTitle: 'Handling Forms in React: Controlled vs Uncontrolled',
-  bengaliTitle: 'React ফর্ম হ্যান্ডলিং: Controlled বনাম Uncontrolled',
-  description: 'React ফর্ম ডেটা নিয়ন্ত্রণে Controlled ও Uncontrolled কম্পোনেন্টের মধ্যে পার্থক্য ও ব্যবহার।',
-  content: 'Understand the difference between controlled and uncontrolled form inputs in React. Learn best practices for handling forms efficiently using either approach.',
-  likes: 16,
-},
-{
-  id: 55,
-  englishTitle: 'React Performance Tips: Memoization & Optimization',
-  bengaliTitle: 'React পারফরম্যান্স টিপস: Memoization ও অপ্টিমাইজেশন কৌশল',
-  description: 'React অ্যাপ্লিকেশনকে দ্রুততর করতে useMemo, useCallback এবং memo এর কার্যকর ব্যবহার।',
-  content: 'This post discusses how to avoid unnecessary re-renders in React using memo, useMemo, and useCallback. Essential for building high-performance applications.',
-  likes: 22,
-},
-{
-  id: 56,
-  englishTitle: 'Atomic Design in React: Build Scalable UIs',
-  bengaliTitle: 'React-এ Atomic Design: স্কেলযোগ্য UI গঠনের প্যাটার্ন',
-  description: 'Atomic Design ব্যবহার করে কীভাবে ছোট ছোট কম্পোনেন্ট দিয়ে বৃহৎ UI তৈরি করা যায়।',
-  content: 'Learn about Atomic Design principles and how to structure React components into atoms, molecules, organisms, templates, and pages for scalability and maintainability.',
-  likes: 15,
-},
-{
-  id: 57,
-  englishTitle: 'React Testing Library: Test Your Components Right',
-  bengaliTitle: 'React Testing Library: কম্পোনেন্ট সঠিকভাবে টেস্ট করা',
-  description: 'React কম্পোনেন্টের UI ও ইন্টারঅ্যাকশন টেস্ট করার জন্য Testing Library-এর ব্যবহার।',
-  content: 'Understand how to write unit and integration tests for React components using React Testing Library. This post focuses on writing accessible and user-centric tests.',
-  likes: 17,
-},
-{
-  id: 58,
-  englishTitle: 'Folder Structure for React Projects: Best Practices',
-  bengaliTitle: 'React প্রজেক্টের ফোল্ডার স্ট্রাকচার: সেরা অভ্যাসসমূহ',
-  description: 'একটি React অ্যাপ্লিকেশনের পরিচ্ছন্ন ও স্কেলযোগ্য ফোল্ডার স্ট্রাকচার কীভাবে তৈরি করবেন।',
-  content: 'This guide outlines a clean and scalable folder structure for React projects. Organize your components, hooks, services, and pages with maintainability in mind.',
-  likes: 20,
-},
-{
-  id: 59,
-  englishTitle: 'React + Tailwind CSS: Build Faster with Utility Classes',
-  bengaliTitle: 'React + Tailwind CSS: ইউটিলিটি ক্লাসে দ্রুত UI নির্মাণ',
-  description: 'React এ Tailwind CSS ব্যবহার করে কীভাবে দ্রুত ও কাস্টমাইজেবল ডিজাইন তৈরি করা যায়।',
-  content: 'Explore how Tailwind CSS can speed up UI development in React projects. Learn how to use utility-first classes for responsive, customizable components.',
-  likes: 23,
-},
-{
-  id: 60,
-  englishTitle: 'Dark Mode in React: Implementing with Context API',
-  bengaliTitle: 'React-এ Dark Mode: Context API দিয়ে তৈরি করুন সহজে',
-  description: 'React এ Context API ব্যবহার করে কীভাবে Dark Mode ফিচার তৈরি করা যায়।',
-  content: 'Learn how to implement a toggleable dark mode feature in your React app using Context API. This includes setting up global state and applying dynamic themes.',
-  likes: 26,
-}
+      id: 51,
+      englishTitle: 'React State Management: Choosing the Right Tool',
+      bengaliTitle: 'React স্টেট ম্যানেজমেন্ট: সঠিক টুলটি বেছে নেওয়া',
+      description: 'useState, useReducer, Context API, Redux—কোন পরিস্থিতিতে কোনটি ব্যবহার করবেন, তার বিশ্লেষণ।',
+      content: 'This post explains the differences between useState, useReducer, Context API, and Redux. It guides developers on when to use which for scalable and efficient state management.',
+      likes: 18,
+    },
+    {
+      id: 52,
+      englishTitle: 'Reusable Custom Hooks in React: Clean & Powerful',
+      bengaliTitle: 'React-এ Reusable কাস্টম হুক: পরিচ্ছন্ন ও শক্তিশালী কোডিং',
+      description: 'React এ কিভাবে নিজস্ব কাস্টম হুক তৈরি করে রিইউজেবল ও ক্লিন কম্পোনেন্ট গঠন করবেন।',
+      content: 'Learn how to create and reuse custom hooks in React to encapsulate logic and keep components clean and focused. This approach encourages separation of concerns and code reusability.',
+      likes: 25,
+    },
+    {
+      id: 53,
+      englishTitle: 'React Router v6: Nested Routes & Dynamic Loading',
+      bengaliTitle: 'React Router v6: Nested রুট ও ডায়নামিক লোডিং Explained',
+      description: 'React Router v6-এ কীভাবে Nested Routes ও Lazy Load Routes তৈরি করবেন তা বিস্তারিতভাবে আলোচনা।',
+      content: 'Explore advanced routing techniques using React Router v6, including nested routes, dynamic routes, and lazy loading to optimize performance and structure.',
+      likes: 19,
+    },
+    {
+      id: 54,
+      englishTitle: 'Handling Forms in React: Controlled vs Uncontrolled',
+      bengaliTitle: 'React ফর্ম হ্যান্ডলিং: Controlled বনাম Uncontrolled',
+      description: 'React ফর্ম ডেটা নিয়ন্ত্রণে Controlled ও Uncontrolled কম্পোনেন্টের মধ্যে পার্থক্য ও ব্যবহার।',
+      content: 'Understand the difference between controlled and uncontrolled form inputs in React. Learn best practices for handling forms efficiently using either approach.',
+      likes: 16,
+    },
+    {
+      id: 55,
+      englishTitle: 'React Performance Tips: Memoization & Optimization',
+      bengaliTitle: 'React পারফরম্যান্স টিপস: Memoization ও অপ্টিমাইজেশন কৌশল',
+      description: 'React অ্যাপ্লিকেশনকে দ্রুততর করতে useMemo, useCallback এবং memo এর কার্যকর ব্যবহার।',
+      content: 'This post discusses how to avoid unnecessary re-renders in React using memo, useMemo, and useCallback. Essential for building high-performance applications.',
+      likes: 22,
+    },
+    {
+      id: 56,
+      englishTitle: 'Atomic Design in React: Build Scalable UIs',
+      bengaliTitle: 'React-এ Atomic Design: স্কেলযোগ্য UI গঠনের প্যাটার্ন',
+      description: 'Atomic Design ব্যবহার করে কীভাবে ছোট ছোট কম্পোনেন্ট দিয়ে বৃহৎ UI তৈরি করা যায়।',
+      content: 'Learn about Atomic Design principles and how to structure React components into atoms, molecules, organisms, templates, and pages for scalability and maintainability.',
+      likes: 15,
+    },
+    {
+      id: 57,
+      englishTitle: 'React Testing Library: Test Your Components Right',
+      bengaliTitle: 'React Testing Library: কম্পোনেন্ট সঠিকভাবে টেস্ট করা',
+      description: 'React কম্পোনেন্টের UI ও ইন্টারঅ্যাকশন টেস্ট করার জন্য Testing Library-এর ব্যবহার।',
+      content: 'Understand how to write unit and integration tests for React components using React Testing Library. This post focuses on writing accessible and user-centric tests.',
+      likes: 17,
+    },
+    {
+      id: 58,
+      englishTitle: 'Folder Structure for React Projects: Best Practices',
+      bengaliTitle: 'React প্রজেক্টের ফোল্ডার স্ট্রাকচার: সেরা অভ্যাসসমূহ',
+      description: 'একটি React অ্যাপ্লিকেশনের পরিচ্ছন্ন ও স্কেলযোগ্য ফোল্ডার স্ট্রাকচার কীভাবে তৈরি করবেন।',
+      content: 'This guide outlines a clean and scalable folder structure for React projects. Organize your components, hooks, services, and pages with maintainability in mind.',
+      likes: 20,
+    },
+    {
+      id: 59,
+      englishTitle: 'React + Tailwind CSS: Build Faster with Utility Classes',
+      bengaliTitle: 'React + Tailwind CSS: ইউটিলিটি ক্লাসে দ্রুত UI নির্মাণ',
+      description: 'React এ Tailwind CSS ব্যবহার করে কীভাবে দ্রুত ও কাস্টমাইজেবল ডিজাইন তৈরি করা যায়।',
+      content: 'Explore how Tailwind CSS can speed up UI development in React projects. Learn how to use utility-first classes for responsive, customizable components.',
+      likes: 23,
+    },
+    {
+      id: 60,
+      englishTitle: 'Dark Mode in React: Implementing with Context API',
+      bengaliTitle: 'React-এ Dark Mode: Context API দিয়ে তৈরি করুন সহজে',
+      description: 'React এ Context API ব্যবহার করে কীভাবে Dark Mode ফিচার তৈরি করা যায়।',
+      content: 'Learn how to implement a toggleable dark mode feature in your React app using Context API. This includes setting up global state and applying dynamic themes.',
+      likes: 26,
+    }
 
   ];
 
@@ -537,7 +537,7 @@ export default function BlogPage() {
         <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-indigo-600 dark:text-indigo-400 mb-8">
           Blog Page
         </h1>
-        
+
         <div className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
           <div className="relative w-full sm:w-1/2">
             <input
@@ -549,35 +549,32 @@ export default function BlogPage() {
             />
             <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
           </div>
-          
+
           <div className="flex space-x-2 w-full sm:w-auto">
             <button
               onClick={() => setSortOrder('newest')}
-              className={`flex items-center px-4 py-2 text-sm font-medium rounded-md shadow-sm transition-colors ${
-                sortOrder === 'newest'
+              className={`flex items-center px-4 py-2 text-sm font-medium rounded-md shadow-sm transition-colors ${sortOrder === 'newest'
                   ? 'bg-indigo-700 text-white'
                   : 'bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700'
-              }`}
+                }`}
             >
               <FaSortAlphaDown className="mr-2" /> Newest
             </button>
             <button
               onClick={() => setSortOrder('oldest')}
-              className={`flex items-center px-4 py-2 text-sm font-medium rounded-md shadow-sm transition-colors ${
-                sortOrder === 'oldest'
+              className={`flex items-center px-4 py-2 text-sm font-medium rounded-md shadow-sm transition-colors ${sortOrder === 'oldest'
                   ? 'bg-indigo-700 text-white'
                   : 'bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700'
-              }`}
+                }`}
             >
               <FaSortAlphaUp className="mr-2" /> Oldest
             </button>
             <button
               onClick={() => setSortOrder('most-liked')}
-              className={`flex items-center px-4 py-2 text-sm font-medium rounded-md shadow-sm transition-colors ${
-                sortOrder === 'most-liked'
+              className={`flex items-center px-4 py-2 text-sm font-medium rounded-md shadow-sm transition-colors ${sortOrder === 'most-liked'
                   ? 'bg-indigo-700 text-white'
                   : 'bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700'
-              }`}
+                }`}
             >
               <FaHeart className="mr-2" /> Most Liked
             </button>
@@ -627,11 +624,10 @@ export default function BlogPage() {
             <button
               key={index + 1}
               onClick={() => paginate(index + 1)}
-              className={`px-4 py-2 text-sm font-medium rounded-md shadow-sm transition-colors ${
-                currentPage === index + 1
+              className={`px-4 py-2 text-sm font-medium rounded-md shadow-sm transition-colors ${currentPage === index + 1
                   ? 'bg-indigo-700 text-white'
                   : 'bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700'
-              }`}
+                }`}
             >
               {index + 1}
             </button>
@@ -677,6 +673,8 @@ export function BlogPost({ post }) {
           </span>
         </Link>
       </div>
+
+
     </div>
   );
 }
